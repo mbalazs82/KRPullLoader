@@ -136,8 +136,8 @@ extension KRPullLoader {
       let threshold = scrollDirection == .vertical ? bounds.height : bounds.width
 
       if scrollView.isDecelerating && offsetValue < -threshold {
-         state = .loading(completionHandler: endLoading)
          startLoading()
+         state = .loading(completionHandler: endLoading)
       } else if offsetValue < 0 {
          state = .pulling(offset: offset, threshold: -(threshold + 12))
       } else {
